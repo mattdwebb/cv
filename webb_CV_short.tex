@@ -1,0 +1,169 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[left=0.76in,right=0.76in,top=0.68in,bottom=0.66in]{geometry}
+\usepackage[charter]{mathdesign}
+\usepackage[scaled=0.92]{beramono}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{needspace}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\definecolor{ink}{HTML}{1C2733}
+\definecolor{accent}{HTML}{176A73}
+\definecolor{muted}{HTML}{56616C}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=accent,
+  urlcolor=accent,
+  pdfauthor={Matthew D. Webb},
+  pdftitle={Matthew D. Webb - Short Curriculum Vitae}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1.2em}
+\color{ink}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{muted}Matthew D. Webb - Short CV}
+\fancyfoot[R]{\footnotesize\color{muted}\thepage\ of \pageref*{LastPage}}
+\setlength{\footskip}{22pt}
+
+\newcommand{\cvsection}[1]{%
+  \Needspace{3\baselineskip}%
+  \vspace{0.72em}%
+  {\large\bfseries\color{accent}#1}\par
+  \vspace{0.16em}\color{accent}\hrule height 0.45pt\color{ink}\vspace{0.38em}
+}
+
+\newenvironment{cvitems}{%
+  \begin{itemize}[leftmargin=0pt,label={},itemsep=0.35em,topsep=0pt,parsep=0pt,partopsep=0pt]
+}{\end{itemize}}
+
+\newenvironment{pubitems}{%
+  \begin{itemize}[leftmargin=0pt,label={},itemsep=0.42em,topsep=0pt,parsep=0pt,partopsep=0pt]
+  \small
+}{\end{itemize}}
+
+\newcommand{\daterow}[2]{%
+  \begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{1.22in}@{}}
+    #1 & \textcolor{muted}{#2}
+  \end{tabularx}\vspace{0.12em}
+}
+
+\newcommand{\paper}[4]{%
+  \item \href{#1}{\textbf{#2}}\\[-0.10em]
+  {\footnotesize #3\if\relax\detokenize{#4}\relax\else\enspace\textit{#4}\fi}
+}
+
+\newcommand{\publication}[4]{%
+  \item \if\relax\detokenize{#1}\relax\textbf{#2}\else\href{#1}{\textbf{#2}}\fi\\[-0.12em]
+  {\footnotesize \if\relax\detokenize{#3}\relax\else#3. \fi\textit{#4}}
+}
+
+\begin{document}
+
+\begin{minipage}[t]{0.61\textwidth}
+  {\fontsize{24}{27}\selectfont\bfseries Matthew D. Webb}\par
+  \vspace{0.25em}
+  {\large Associate Professor of Economics}\par
+  {\normalsize Carleton University}
+\end{minipage}%
+\begin{minipage}[t]{0.39\textwidth}
+  \small\raggedleft
+  \href{mailto:matt.webb@carleton.ca}{matt.webb@carleton.ca}\\
+  \href{https://mattdwebb.github.io/}{mattdwebb.github.io}\\
+  \href{https://github.com/mattdwebb}{github.com/mattdwebb}
+\end{minipage}
+
+\vspace{0.52em}
+\color{accent}\hrule height 1pt\color{ink}
+\vspace{0.46em}
+{\small\textbf{Research interests:} Applied Microeconometrics; Causal Inference; Machine Learning and AI for Economic Measurement; Empirical Microeconomics.}
+
+\cvsection{Appointments}
+\daterow{\textbf{Associate Professor}, Department of Economics, Carleton University}{2021--present}
+\daterow{\textbf{Assistant Professor}, Department of Economics, Carleton University}{2015--2021}
+\daterow{\textbf{Eyes High Postdoctoral Scholar}, Department of Economics, University of Calgary}{2013--2015}
+
+\cvsection{Education}
+\daterow{\textbf{Ph.D., Economics}, Queen's University\\[-0.10em]{\footnotesize Thesis: ``Econometric Analysis of Labour Market Interventions''; supervisors: Steven F. Lehrer and James G. MacKinnon}}{2013}
+\daterow{\textbf{M.A., Business Economics}, Wilfrid Laurier University}{2007}
+\daterow{\textbf{B.A., Honours Economics}, Wilfrid Laurier University}{2006}
+
+\cvsection{Current Research}
+\begin{cvitems}
+\paper{https://arxiv.org/abs/2609.35470}{Representation Risk in Pretrained Image Encoders}{with Morgan Nordstrom, Ardyn Nordstrom, and Vamuyan Sesay.}{Submitted.}
+\paper{https://github.com/SunnyRKarim/HUD-paper}{Fewer Homes, Similar Neighborhoods: Revisiting the Evidence for Racial Housing Discrimination in `Sorting or Steering'}{with Shi Chen, Areez Gangji, Sunny Karim, and Anthony McCanny.}{Resubmitted - after second round of revisions requested at Journal of Political Economy.}
+\paper{https://arxiv.org/abs/2406.08880}{Jackknife Inference with Two-Way Clustering}{with James G. MacKinnon and Morten \O rregaard Nielsen.}{Revisions requested at Econometric Reviews.}
+\paper{https://arxiv.org/abs/2609.01467}{Which Policy Works, and Where? Estimation and Inference for State-Level Treatment Effects in Difference-in-Differences}{with Nicole Austin, Sunny Karim, and Erin Strumpf.}{Submitted.}
+\paper{https://arxiv.org/abs/2403.15910}{Difference-in-Differences with Unpoolable Data}{with Sunny Karim, Nicole Austin, and Erin Strumpf.}{Submitted.}
+\paper{https://arxiv.org/abs/2602.12043}{Improved Inference for CSDID Using the Cluster Jackknife}{with Sunny Karim, Morten \O rregaard Nielsen, and James G. MacKinnon.}{}
+\paper{https://arxiv.org/abs/2412.14447}{Good Controls Gone Bad: Difference-in-Differences with Covariates}{with Sunny Karim.}{}
+\paper{https://arxiv.org/abs/2403.19915}{Using Images as Covariates: Measuring Curb Appeal with Deep Learning}{with Ardyn Nordstrom and Morgan Nordstrom.}{}
+\end{cvitems}
+
+\newpage
+\cvsection{Economics Publications}
+\begin{pubitems}
+\publication{}{A Comment on `Delivering Remote Learning Using a Low-Tech Solution: Evidence from a Randomized Controlled Trial in Bangladesh'}{Lenka Fiala, Jack Fitzgerald, Essi Kujansuu, Derek Mikola, David Valenta, Juan P. Aparicio, Michael Wiebe, \textbf{Matthew D. Webb}, and Abel Brodeur}{Accepted at Journal of Political Economy Micro.}
+\publication{https://doi.org/10.1017/esa.2025.10018}{Choosing Portfolios of Rival Risky Options: Evidence That Most People Violate the No Safety Schools Theorem}{with David B. Johnson}{Journal of the Economic Science Association 11(2), 173--197, 2025.}
+\publication{https://arxiv.org/abs/2406.00650}{Cluster-Robust Jackknife and Bootstrap Inference for Binary Response Models}{with James G. MacKinnon and Morten \O rregaard Nielsen}{Forthcoming at Econometric Reviews.}
+\publication{https://ideas.repec.org/p/arx/papers/2205.03288.html}{Leverage, Influence, and the Jackknife in Clustered Regression Models: Reliable Inference Using summclust}{with James G. MacKinnon and Morten \O rregaard Nielsen}{Stata Journal 23(4), 942--982, 2023.}
+\publication{https://ideas.repec.org/p/qed/wpaper/1428.html}{Testing for the Appropriate Level of Clustering in Linear Regression Models}{with James G. MacKinnon and Morten \O rregaard Nielsen}{Journal of Econometrics 235, 2027--2056, 2023.}
+\publication{https://ideas.repec.org/p/qed/wpaper/1485.html}{Fast and Reliable Jackknife and Bootstrap Methods for Cluster-Robust Inference}{with James G. MacKinnon and Morten \O rregaard Nielsen}{Journal of Applied Econometrics 38(5), 671--694, 2023.}
+\publication{https://carleton.ca/economics/wp-content/uploads/cewp-19-08.pdf}{Finish It and It's Free: An Evaluation of College Graduation Subsidies}{with Derek Mikola}{Economics of Education Review 93, 102355, 2023.}
+\publication{http://ideas.repec.org/p/qed/wpaper/1315.html}{Reworking Wild Bootstrap Based Inference for Clustered Errors}{}{Canadian Journal of Economics 56(3), 839--858, 2023.}
+\publication{https://doi.org/10.1016/j.jeconom.2022.04.001}{Cluster-Robust Inference: A Guide to Empirical Practice}{with James G. MacKinnon and Morten \O rregaard Nielsen}{Journal of Econometrics 232(7), 272--299, 2023.}
+\publication{https://link.springer.com/referenceworkentry/10.1007\%2F978-3-319-57365-6_43-1}{Clustering Methods for Statistical Inference}{with James G. MacKinnon}{Handbook of Labor, Human Resources and Population Economics.}
+\publication{http://qed.econ.queensu.ca/working_papers/papers/qed_wp_1386.pdf}{Bootstrap and Asymptotic Inference with Multiway Clustering}{with James G. MacKinnon and Morten \O rregaard Nielsen}{Journal of Business and Economic Statistics 39(2), 505--519.}
+\publication{http://ideas.repec.org/p/qed/wpaper/1355.html}{Randomization Inference for Difference-in-Differences with Few Treated Clusters}{with James G. MacKinnon}{Journal of Econometrics 218(2), 435--450.}
+\end{pubitems}
+
+\newpage
+\cvsection{Economics Publications (continued)}
+\begin{pubitems}
+\publication{http://economics.ryerson.ca/workingpapers/wp063.pdf}{A Simple, Graphical Procedure for Comparing Multiple Treatment Effects}{with Brennan Thompson}{The Econometrics Journal 22(2), 188--205, 2019.}
+\publication{http://ideas.repec.org/p/qed/wpaper/1406.html}{Fast and Wild: Bootstrap Inference in Stata Using boottest}{with David Roodman, James G. MacKinnon, and Morten \O rregaard Nielsen}{Stata Journal 19(1), 4--60, 2019.}
+\publication{}{Wild Bootstrap Randomization Inference for Few Treated Clusters}{with James G. MacKinnon}{Advances in Econometrics 39, 61--85, 2019.}
+\publication{http://www.cream-migration.org/publ_uploads/CDP_18_16.pdf}{Immigrant Category of Admission of the Parents and Outcomes of the Children: How Far Does the Apple Fall?}{with Casey Warman and Chris Worswick}{Journal of Population Economics 32(1), 53--112, 2019.}
+\publication{http://qed.econ.queensu.ca/working_papers/papers/qed_wp_1364.pdf}{The Wild Bootstrap for Few (Treated) Clusters}{with James G. MacKinnon}{The Econometrics Journal 21(2), 114--135, 2018.}
+\publication{http://onlinelibrary.wiley.com/doi/10.1002/jae.2508/epdf}{Wild Bootstrap Inference for Wildly Different Cluster Sizes}{with James G. MacKinnon}{Journal of Applied Econometrics 32(2), 233--254, 2017.}
+\publication{http://ftp.iza.org/dp10182.pdf}{Targeting Tax Relief at Youth Employment}{with Arthur Sweetman and Casey Warman}{Canadian Public Policy 42(4), 415--430, 2016.}
+\end{pubitems}
+
+\cvsection{Selected Grants}
+\daterow{\textbf{SSHRC Partnership Development Grant} (Co-Director), \$200,000}{2026--2029}
+\daterow{\textbf{SSHRC Connection Grant} (PI), \$25,000}{2025--2026}
+\daterow{\textbf{SSHRC Insight Grant} (PI), \$94,250}{2025--2028}
+\daterow{\textbf{National Research Council Research Contract} (co-PI), \$91,638}{2024--2026}
+
+\cvsection{Software}
+\begin{cvitems}
+  \item \href{https://github.com/mattdwebb/twowayjack}{\texttt{twowayjack}} - Two-way jackknife cluster-robust inference for linear models.
+  \item \href{https://github.com/mattdwebb/logitjack}{\texttt{logitjack}} - Jackknife cluster-robust inference for logit models.
+  \item \href{https://github.com/mattdwebb/summclust}{\texttt{summclust}} - Jackknife cluster-robust inference for linear models.
+  \item \href{https://github.com/mattdwebb/mnwsvt}{\texttt{mnwsvt}} - Tests for the level of clustering.
+\end{cvitems}
+
+\cvsection{Selected Professional Service}
+\daterow{\textbf{Secretary and member, Board of Directors}, Canadian Economics Association}{June 2026--present}
+\daterow{\textbf{Guest Editor}, Special Issue in Honour of James MacKinnon, Canadian Journal of Economics}{2025--present}
+\daterow{\textbf{Guest Editor}, Special Issue in Honour of James MacKinnon, Econometric Reviews}{2025--present}
+
+\cvsection{Research Impact}
+{\small Google Scholar: 4,588 citations; h-index 18; i10-index 21. Accessed September 28, 2026.}
+
+\vfill
+{\footnotesize\color{muted}This short public CV emphasizes current research, economics publications, major active grants, software, and selected professional service. A comprehensive CV is available at \href{https://mattdwebb.github.io/cv.html}{mattdwebb.github.io/cv.html}.}
+
+\end{document}
